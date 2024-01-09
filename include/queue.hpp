@@ -1,3 +1,5 @@
+//kodlamaya burdan baslanmis
+
 #pragma once
 
 #include <condition_variable>
@@ -24,7 +26,7 @@ class Queue {
   void push(T const& msg) {
     std::lock_guard<std::mutex> lk(m_);
     q_.push(std::make_shared<WrappedMessage<T>>(msg)); //Wrap posted message and store pointer
-    c_.notify_all();
+    c_.notify_all(); // notify the rest of the waiting threads
   }
 
   std::shared_ptr<MessageBase> waitAndPop() {
