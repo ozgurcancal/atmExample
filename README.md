@@ -1,4 +1,4 @@
 # messaging
-complete atm example from the book C++ Concurrency in Action 2nd Edition
+complete atm example 
 
 pin is 1937 :)
